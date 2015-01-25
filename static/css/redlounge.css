@@ -474,3 +474,9 @@ hr.thin {
         bottom: 0;
     }
 }
+
+
+/* tsaikd fix section */
+.post img {
+	max-width: 100%;
+}
