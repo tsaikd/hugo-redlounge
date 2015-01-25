@@ -32,10 +32,13 @@
               {{ if and (not .Params.noread) (not .Site.Params.noread) }}
                 <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>{{.ReadingTime}} min. read</em></span>
               {{ end }}
-      				{{ if .Params.categories }}
+      				{{ if or .Params.categories .Params.tags }}
       					<div class="post-categories">
 				        {{ $Site := .Site }}
       					{{ range .Params.categories }}
+					        <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseUrl}}/categories/{{ . | urlize }}">{{ . }}</a>
+      					{{ end }}
+      					{{ range .Params.tags }}
 					        <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseUrl}}/categories/{{ . | urlize }}">{{ . }}</a>
       					{{ end }}
       					</div>
