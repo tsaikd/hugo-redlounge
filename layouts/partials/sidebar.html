@@ -2,12 +2,12 @@
   <div class="header">
     {{ partial "sidebarheader.html" . }}
 
-    {{ if .Site.Params.sidebartitle }}<h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1>{{ end }}
+    {{ if .Site.Params.sidebartitle }}<a href="{{ .Site.BaseUrl }}"><h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1></a>{{ end }}
     {{ if .Site.Params.sidebartagline }}<h2 class="brand-tagline">{{ .Site.Params.sidebartagline }}</h2>{{ end }}
 
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ .Site.BaseUrl }}">Home</a></li>
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="/">Home</a></li>
         {{ range .Site.Menus.main }}
           <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ .Url }}">{{ .Name }}</a></li>
         {{ end }}
